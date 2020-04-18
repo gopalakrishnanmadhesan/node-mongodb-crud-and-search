@@ -1,12 +1,11 @@
-# node-mongod
-lsof -i tcp: PORT NUMBER
-kill -9 Process id
-npm start
-# How To Install
- clone this Project into your location
- Change path directory to project folder in cmd line
- Run below commands in cmd
- 	```
+
+	# clone this Project into your location
+	```
+	# Change path directory to project folder in cmd line
+	```
+	 Run below commands in cmd
+	```
+	
 	npm install
 	```
 	or short version
@@ -14,8 +13,8 @@ npm start
 	npm i
 	```
 	# Install MondoDb
-	Check mondo connection using robo3t or mongoDb Compass
-	
+	Check mongo connection using robo3t or mongoDb Compass
+
 	# Create following collections
 	1. user
 	2. projects
@@ -26,4 +25,4 @@ npm start
 	npm start
 	```
 	Now app.js will run and ports and set by bin/www
-	
+
