@@ -1,0 +1,18 @@
+extends layout
+block content
+	.row
+		.col-sm-4.center
+			.card.login-block
+				form#login(action='/auth/ajax/signin', data-redirecturl="/dashboard" method='post')
+					.form-group
+						input.form-control.auth-answer-field(type='email', name='email', placeholder='Email', , data-vaidation-rules={ required:true, validEmail: true })
+					.form-group
+						input.form-control.auth-answer-field(type='password', name='password', placeholder='Password')
+					.error.servererror
+					.row
+						.col-md-12
+							button.btn.btn-primary.btn-block.loginFormsubmit(type='submit') Sign In
+					//- p.mb-0.mt-3
+					//- 	a.text-center(href='/register') Register a new membership
+block script
+	script(src="/javascripts/commentsave.js")

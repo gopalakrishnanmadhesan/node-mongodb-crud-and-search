@@ -1,0 +1,21 @@
+extends layout
+block style
+	link(rel='stylesheet', href='/stylesheets/style.css')
+block content
+	.col-sm-12
+		form#employeeSearchForm( action='/project/search', data-redirecturl="/employment" method="post")
+			.col-sm-3.form-group
+				select.form-control.select2(style='width: 100%;',  data-placeholder="Select Project", name="project_name", required)
+					option
+						each empData,empIndex in data
+							option(value='#{empData._id}') #{empData.name}
+			.col-sm-3.form-group
+				select.form-control.select2(style='width: 100%;',  data-placeholder="Select Search Option", name="criteria", required)
+					option(value="employees_list") Find Employees
+					option(value="lead") Get Lead Name
+			.col-sm-1
+				button.btn.btn-primary.employmentSerach.searchBtn(type='submit', style="padding: 3px 20px;") Search
+	.col-sm-12
+		.tablelookup
+block script
+	script(src="/javascripts/commentsave.js")

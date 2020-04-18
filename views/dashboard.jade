@@ -1,0 +1,12 @@
+extends layout
+block content
+	.col-sm-8
+		.col-sm-6
+			.col-sm-6.align-center
+				a.round(href="/employment") Employee Details
+				a(href="/employment/search") Employee Search
+			.col-sm-6.align-center
+				a.round(href="/project") Project Details
+				a(href="/project/search") Project Search
+block script
+	script(src="/javascripts/commentsave.js")

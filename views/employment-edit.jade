@@ -1,0 +1,56 @@
+extends layout
+block style
+	link(rel='stylesheet', href='/stylesheets/style.css')
+block content
+	-  function dateFormat(date) { 
+		- var date = new Date(date)
+		- var day = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
+		- var month = date.getMonth()+1
+		- month = month < 10 ? '0' + month : month;
+		- return day + '-' + month + '-' + date.getFullYear()
+	- };
+	.col-sm-8
+		form#edit_form_submit( action='/employment/update/#{data._id}' method="post")
+			div.form-group
+				label Employee Name:
+			div.form-group
+				input#name.form-control(type='text', placeholder='First Last Name' name='name', value="#{data.name}" required)
+			div.form-group
+				label Email:
+			div.form-group
+				input.form-control.auth-answer-field(type='email', name='email', placeholder='Email', , data-vaidation-rules={ required:true, validEmail: true }, value="#{data.email}")
+			div.form-group
+				label Password:
+			div.form-group
+				input.form-control.auth-answer-field(type='password', name='password', placeholder='Password' required)
+			div.form-group
+				label Joining Date:
+			div.form-group
+				input.form-control.auth-answer-field.datepicker(type='text', name='joining_date', placeholder="DD-MM-YYYY" required pattern="[0-9]{2}-[0-9]{2}-[0-9]{4}" title="Enter a date in this formart DD-MM-YYYY", value="#{dateFormat(data.joining_date)}")
+			div.form-group
+				label DOB:
+			div.form-group
+				input.form-control.auth-answer-field.datepicker(type='text', name='dob', placeholder="DD-MM-YYYY" required pattern="[0-9]{2}-[0-9]{2}-[0-9]{4}" title="Enter a date in this formart DD-MM-YYYY", value="#{dateFormat(data.dob)}")
+			div.form-group
+				label Gender:
+			div.form-group
+				div.col-sm-12.col-pd-0
+					label.checkbox Male &emsp;
+						input(type='radio', name='gender' value = 'male' required)
+						span.checkmark
+					label.checkbox Female
+						input(type='radio', name='gender' value = 'female' required)
+						span.checkmark
+			div.form-group
+				label Status:
+			div.form-group
+				div.col-sm-12.col-pd-0
+					label.checkbox Active &emsp;
+						input(type='radio', name='status' value = 'active' required)
+						span.checkmark
+					label.checkbox Inactive
+						input(type='radio', name='status' value = 'inactive' required)
+						span.checkmark
+			button.btn.btn-primary#editFormsubmitBtn(type='submit') Submit
+block script
+	script(src="/javascripts/commentsave.js")

@@ -1,0 +1,35 @@
+.col-sm-8
+	table#customers
+		thead
+			tr
+				th Name
+				th Start Date
+				th End Date
+				if (data.type == "leading")
+					th Employees Name
+				else 
+					th Lead Name
+				th Status
+		tbody
+			-  function dateFormat(date) { 
+				- var date = new Date(date)
+				- var day = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
+				- var month = date.getMonth()+1
+				- month = month < 10 ? '0' + month : month;
+				- return day + '-' + month + '-' + date.getFullYear()
+			- };
+			each logs,logIndex in data.project
+				tr
+					td.ucFirst #{logs.name}
+					td #{dateFormat(logs.start_date)}
+					td #{dateFormat(logs.end_date)}
+					if (data.type == "contributions")
+						td.ucFirst #{logs.employeeDetails.name}
+					else
+						td.ucFirst
+							ol
+								if (logs.employeeDetails)
+									each employeeData,employeeIndex in logs.employeeDetails
+										li #{employeeData["name"]}
+					td.ucFirst #{logs.status}
+	

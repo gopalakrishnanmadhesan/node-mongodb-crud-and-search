@@ -1,0 +1,27 @@
+.col-sm-8
+	table#customers
+		thead
+			tr
+				th Name
+				th Email
+				th DOB
+				th Joining Date
+				th Status
+		tbody
+			-  function dateFormat(date) { 
+				- var date = new Date(date)
+				- var day = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
+				- var month = date.getMonth()+1
+				- month = month < 10 ? '0' + month : month;
+				- return day + '-' + month + '-' + date.getFullYear()
+			- };
+			- console.log(data.project);
+			each record, key in data.project
+				each logs,logIndex in record.employeeDetails
+					tr
+						td.ucFirst #{logs.name}
+						td #{logs.email}
+						td #{dateFormat(logs.dob)}
+						td #{dateFormat(logs.joining_date)}
+						td.ucFirst #{logs.status}
+	

@@ -1,0 +1,31 @@
+doctype html
+html
+	head
+		title= title
+		link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css')
+		link(rel='stylesheet', href='//cdn.datatables.net/1.10.15/css/jquery.dataTables.css')
+		link(rel='stylesheet', href='//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css')
+		link(rel='stylesheet', href='//stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+		link(rel='stylesheet', href='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css')
+		link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.12/css/select2.min.css')
+		link(rel='stylesheet', href='/stylesheets/style.css')
+		block style
+		script.
+			function testMonth(date) {
+				alert("date")
+			}
+	body
+		block content
+		script(src="https://code.jquery.com/jquery-1.10.2.js")
+		script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+		script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js")
+		script(src='http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js')
+		script(src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js')
+		script(src='http://code.jquery.com/ui/1.11.4/jquery-ui.js')
+		script(src="http://cdn.datatables.net/1.10.15/js/jquery.dataTables.js")
+		script(src="https://cdn.rawgit.com/mozilla/localForage/master/dist/localforage.js")
+		script(src="https://cdn.datatables.net/plug-ins/1.10.15/api/row().show().js")
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.12/js/select2.full.min.js")
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.12/js/select2.min.js")
+		
+		block script
